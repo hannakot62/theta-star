@@ -4,6 +4,7 @@ import {unsetIsSettingBoundaries} from "../store/slices/isSettingBoundariesSlice
 import {unsetStartPoint} from "../store/slices/startPointSlice";
 import {unsetEndPoint} from "../store/slices/endPointSlice";
 import {setIsClean} from "../store/slices/isCleanSlice";
+import {setDefaultMatrix} from "../store/slices/matrixSlice";
 
 export default function handleRefreshButtonClick(dispatch){
     dispatch(unsetIsSettingStart())
@@ -13,6 +14,7 @@ export default function handleRefreshButtonClick(dispatch){
     dispatch(unsetEndPoint())
 
     dispatch(setIsClean())
+    dispatch(setDefaultMatrix())
 
     //todo: очитска поля
 }
