@@ -11,14 +11,14 @@ export default function Td(props) {
     const isSettingStart = useSelector(state => state.isSettingStart.isSettingStart)
     const isSettingEnd = useSelector(state => state.isSettingEnd.isSettingEnd)
     const isSettingBoundaries = useSelector(state => state.isSettingBoundaries.isSettingBoundaries)
-    const startPoint = useSelector(state=> state.startPoint)
-    const endPoint = useSelector(state=> state.endPoint)
+    const startPoint = useSelector(state => state.startPoint)
+    const endPoint = useSelector(state => state.endPoint)
     const isClean = useSelector(state => state.isClean.isClean)
     const route = useSelector(state => state.route.route)
 
     const handleClick = () => {
         setClassName(
-            handleTdClick(i, j, dispatch, isSettingStart, isSettingEnd, isSettingBoundaries, startPoint,endPoint))
+            handleTdClick(i, j, dispatch, isSettingStart, isSettingEnd, isSettingBoundaries, startPoint, endPoint))
     }
 
     useEffect(() => {
@@ -26,8 +26,8 @@ export default function Td(props) {
     }, [isClean])
     useEffect(() => {
         if (!route.length) setClassName(style.td)
-        else{
-            if(route.some(pair=>pair[0]===i&&pair[1]===j)) {
+        else {
+            if (route.some(pair => pair[0] === i && pair[1] === j)) {
                 setClassName(style.route)
             }
         }
