@@ -5,6 +5,7 @@ import isSettingBoundariesReducer from "./slices/isSettingBoundariesSlice";
 import isLoadingReducer from  './slices/isLoadingSlice'
 import startPointReducer from './slices/startPointSlice'
 import endPointReducer from './slices/endPointSlice'
+import isCleanReducer from './slices/isCleanSlice'
 
 
 
@@ -16,7 +17,7 @@ export const store = configureStore({
         isLoading: isLoadingReducer,
         startPoint: startPointReducer,
         endPoint: endPointReducer,
-
+        isClean: isCleanReducer,
     }
 })
 
