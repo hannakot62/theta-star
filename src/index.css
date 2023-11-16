@@ -1,1 +1,44 @@
+:root{
+    --taupe: #463F3A;
+    --battleship-gray: #8A817C;
+    --silver: #BCB8B1;
+    --isabelline: #F4F3EE;
+    --melon: #E0AFA0;
+    --light-brown: #81665d;
 
+    --taupe-disabled: #625c57;
+    --battleship-gray-disabled: #c4bbb8;
+    --silver-disabled: #d5d3d0;
+    --isabelline-disabled: #F4F3EE;
+    --light-brown-disabled: #9a8f89;
+}
+
+@font-face {
+    font-family: 'Agbalumo';
+    src: url('/public/fonts/Agbalumo/Agbalumo-Regular.ttf') format('truetype')
+}
+
+body{
+    background-color: var(--taupe);
+}
+
+*{
+    margin: 0 auto;
+}
+
+button{
+    font-family: 'Agbalumo', sans-serif;
+    font-size: 1.5em;
+    padding: 10px 10px 15px 10px;
+    line-height: 100%;
+    border-radius: 30px;
+    border: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button:disabled{
+    cursor: auto;
+}
