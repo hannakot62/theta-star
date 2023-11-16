@@ -3,7 +3,6 @@ import {unsetIsSettingStart} from "../store/slices/isSettingStartSlice";
 import {setEndPoint} from "../store/slices/endPointSlice";
 import {unsetIsSettingEnd} from "../store/slices/isSettingEndSlice";
 import tdStyle from '../components/Td/Td.module.css'
-import {unsetIsSettingBoundaries} from "../store/slices/isSettingBoundariesSlice";
 import {addBoundary} from "../store/slices/matrixSlice";
 
 export default function handleTdClick(event, i, j, dispatch, isSettingStart, isSettingEnd, isSettingBoundaries) {
