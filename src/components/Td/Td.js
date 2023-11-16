@@ -8,12 +8,11 @@ export default function Td(props) {
     const dispatch = useDispatch()
     const [className, setClassName] = useState(style.td)
 
-
     const isSettingStart = useSelector(state => state.isSettingStart.isSettingStart)
     const isSettingEnd = useSelector(state => state.isSettingEnd.isSettingEnd)
     const isSettingBoundaries = useSelector(state => state.isSettingBoundaries.isSettingBoundaries)
     const isClean = useSelector(state => state.isClean.isClean)
-
+    const route = useSelector(state => state.route.route)
 
     const handleClick = (event) => {
         setClassName(
@@ -23,7 +22,14 @@ export default function Td(props) {
     useEffect(() => {
         if (isClean) setClassName(style.td)
     }, [isClean])
-
+    useEffect(() => {
+        if (!route.length) setClassName(style.td)
+        else{
+            if(route.some(pair=>pair[0]===i&&pair[1]===j)) {
+                setClassName(style.route)
+            }
+        }
+    }, [route, i, j])
 
     return (
         <td className={className}
