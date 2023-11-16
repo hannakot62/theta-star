@@ -16,10 +16,10 @@
     background-color: var(--melon);
 }
 .boundary{
-
+    background-color: var(--taupe);
 }
 .route{
-
+    background-color: var(--battleship-gray);
 }
 
 @media (max-width: 490px) {
