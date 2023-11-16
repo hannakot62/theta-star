@@ -20,7 +20,6 @@ export default function handleTdClick(event, i, j, dispatch, isSettingStart, isS
     }
     if (isSettingBoundaries) {
         dispatch(addBoundary({i, j}))
-        dispatch(unsetIsSettingBoundaries())
         return tdStyle.boundary
     }
 

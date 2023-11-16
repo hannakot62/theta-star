@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import handleSetStartButtonClick from "../../handlers/handleSetStartButtonClick";
 import handleSetEndButtonClick from "../../handlers/handleSetEndButtonClick";
 import handleRefreshButtonClick from "../../handlers/handleRefreshButtonClick";
+import handleSetBoundariesButtonClick from "../../handlers/handleSetBoundariesButtonClick";
 
 export default function ButtonsContainer() {
     const setStartDisabled = useSelector(state => state.startPoint.x) !== -1
@@ -18,7 +19,7 @@ export default function ButtonsContainer() {
                     onClick={() => handleSetStartButtonClick(dispatch)}>set start
             </button>
             <button className={style.end} disabled={setEndDisabled} onClick={()=>handleSetEndButtonClick(dispatch)}>set end</button>
-            <button className={style.boundaries}>set boundaries</button>
+            <button className={style.boundaries} onClick={()=>handleSetBoundariesButtonClick(dispatch)}>set boundaries</button>
 
             <div className={style.bottomBtns}>
                 <button className={style.route} disabled={getTheRouteDisabled}>get the route</button>
