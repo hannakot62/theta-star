@@ -11,12 +11,14 @@ export default function Td(props) {
     const isSettingStart = useSelector(state => state.isSettingStart.isSettingStart)
     const isSettingEnd = useSelector(state => state.isSettingEnd.isSettingEnd)
     const isSettingBoundaries = useSelector(state => state.isSettingBoundaries.isSettingBoundaries)
+    const startPoint = useSelector(state=> state.startPoint)
+    const endPoint = useSelector(state=> state.endPoint)
     const isClean = useSelector(state => state.isClean.isClean)
     const route = useSelector(state => state.route.route)
 
-    const handleClick = (event) => {
+    const handleClick = () => {
         setClassName(
-            handleTdClick(event, i, j, dispatch, isSettingStart, isSettingEnd, isSettingBoundaries))
+            handleTdClick(i, j, dispatch, isSettingStart, isSettingEnd, isSettingBoundaries, startPoint,endPoint))
     }
 
     useEffect(() => {
@@ -33,7 +35,7 @@ export default function Td(props) {
 
     return (
         <td className={className}
-            onClick={(event) => handleClick(event)}>
+            onClick={() => handleClick()}>
         </td>
     )
 }

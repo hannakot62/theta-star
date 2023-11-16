@@ -5,8 +5,7 @@ import {unsetIsSettingEnd} from "../store/slices/isSettingEndSlice";
 import tdStyle from '../components/Td/Td.module.css'
 import {addBoundary} from "../store/slices/matrixSlice";
 
-export default function handleTdClick(event, i, j, dispatch, isSettingStart, isSettingEnd, isSettingBoundaries) {
-    if (!event) return tdStyle.td
+export default function handleTdClick( i, j, dispatch, isSettingStart, isSettingEnd, isSettingBoundaries,startPoint, endPoint) {
     if (isSettingStart) {
         dispatch(setStartPoint({x: i, y: j}))
         dispatch(unsetIsSettingStart())
@@ -21,6 +20,10 @@ export default function handleTdClick(event, i, j, dispatch, isSettingStart, isS
         dispatch(addBoundary({i, j}))
         return tdStyle.boundary
     }
+    if (i === startPoint.x && j === startPoint.y)
+        return tdStyle.start
+    if (i === endPoint.x && j === endPoint.y)
+        return tdStyle.end
 
     return tdStyle.td
 }
