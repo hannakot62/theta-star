@@ -6,7 +6,7 @@ import isLoadingReducer from  './slices/isLoadingSlice'
 import startPointReducer from './slices/startPointSlice'
 import endPointReducer from './slices/endPointSlice'
 import isCleanReducer from './slices/isCleanSlice'
-
+import matrixReducer from './slices/matrixSlice'
 
 
 export const store = configureStore({
@@ -18,6 +18,7 @@ export const store = configureStore({
         startPoint: startPointReducer,
         endPoint: endPointReducer,
         isClean: isCleanReducer,
+        matrix: matrixReducer
     }
 })
 
