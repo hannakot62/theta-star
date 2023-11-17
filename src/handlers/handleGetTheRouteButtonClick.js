@@ -12,22 +12,20 @@ export default function handleGetTheRouteButtonClick(dispatch, matrix, startPoin
     dispatch(unsetIsSettingBoundaries())
 
     const thetaStar = new ThetaStar(matrix);
-    //todo: time -> modal
     dispatch(setIsLoading())
     const startTime = Date.now()
     const route = thetaStar.findPath(startPoint.x, startPoint.y, endPoint.x, endPoint.y)
     const endTime = Date.now()
     const timeRequired = endTime-startTime
     dispatch(unsetIsLoading())
+
     if(!route.length){
-        dispatch(setResultText(`No path was found 😥
-        Time required: ${timeRequired}ms`))
+        dispatch(setResultText(`No path was found 😥 \nTime required: ${timeRequired} ms`))
     }
     else{
         route.pop()
         route.shift()
         dispatch(setRoute(route))
-        dispatch(setResultText(`Just found the path! 🎉🎉🎉
-        Needed ${timeRequired}ms to solve it!`))
+        dispatch(setResultText(`Just found the path! 🎉🎉🎉\nNeeded ${timeRequired} ms to solve it!`))
     }
 }
