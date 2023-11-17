@@ -16,6 +16,7 @@ export default function ButtonsContainer() {
     const startPoint = useSelector(state => state.startPoint)
     const endPoint = useSelector(state => state.endPoint)
     const matrix = useSelector(state => state.matrix.matrix)
+    const route = useSelector(state=>state.route.route)
 
     return (
         <div className={style.container}>
@@ -35,7 +36,7 @@ export default function ButtonsContainer() {
 
             <div className={style.bottomBtns}>
                 <button className={style.route} disabled={getTheRouteDisabled}
-                        onClick={() => handleGetTheRouteButtonClick(dispatch, matrix, startPoint, endPoint)}>get the
+                        onClick={() => handleGetTheRouteButtonClick(dispatch, matrix, startPoint, endPoint, route)}>get the
                     route
                 </button>
 
