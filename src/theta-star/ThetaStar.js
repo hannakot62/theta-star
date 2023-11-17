@@ -99,6 +99,6 @@ export default class ThetaStar {
             }
         }
 
-        return "No path found";
+        return [];
     }
 }

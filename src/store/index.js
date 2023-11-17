@@ -7,7 +7,8 @@ import startPointReducer from './slices/startPointSlice'
 import endPointReducer from './slices/endPointSlice'
 import isCleanReducer from './slices/isCleanSlice'
 import matrixReducer from './slices/matrixSlice'
-import routeReducer from "./slices/routeSlice";
+import routeReducer from "./slices/routeSlice"
+import resultTextReducer from "./slices/resultTextSlice";
 
 export const store = configureStore({
     reducer: {
@@ -19,7 +20,8 @@ export const store = configureStore({
         endPoint: endPointReducer,
         isClean: isCleanReducer,
         matrix: matrixReducer,
-        route: routeReducer
+        route: routeReducer,
+        resultText: resultTextReducer
     }
 })
 

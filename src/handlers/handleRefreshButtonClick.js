@@ -6,6 +6,7 @@ import {unsetEndPoint} from "../store/slices/endPointSlice";
 import {setIsClean} from "../store/slices/isCleanSlice";
 import {setDefaultMatrix} from "../store/slices/matrixSlice";
 import {unsetRoute} from "../store/slices/routeSlice";
+import {unsetResultText} from "../store/slices/resultTextSlice";
 
 export default function handleRefreshButtonClick(dispatch){
     dispatch(unsetIsSettingStart())
@@ -17,4 +18,5 @@ export default function handleRefreshButtonClick(dispatch){
     dispatch(setDefaultMatrix())
     dispatch(unsetRoute())
     dispatch(setIsClean())
+    dispatch(unsetResultText())
 }
