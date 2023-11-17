@@ -19,12 +19,15 @@ export default function ButtonsContainer() {
 
     return (
         <div className={style.container}>
+
             <button className={style.start} disabled={setStartDisabled}
                     onClick={() => handleSetStartButtonClick(dispatch)}>set start
             </button>
+
             <button className={style.end} disabled={setEndDisabled}
                     onClick={() => handleSetEndButtonClick(dispatch)}>set end
             </button>
+
             <button className={style.boundaries} onClick={() => handleSetBoundariesButtonClick(dispatch)}>set
                 boundaries
             </button>
@@ -32,8 +35,10 @@ export default function ButtonsContainer() {
 
             <div className={style.bottomBtns}>
                 <button className={style.route} disabled={getTheRouteDisabled}
-                        onClick={() => handleGetTheRouteButtonClick(dispatch, matrix, startPoint, endPoint)}>get the route
+                        onClick={() => handleGetTheRouteButtonClick(dispatch, matrix, startPoint, endPoint)}>get the
+                    route
                 </button>
+
                 <button className={style.refresh} onClick={() => handleRefreshButtonClick(dispatch)}>refresh</button>
             </div>
 

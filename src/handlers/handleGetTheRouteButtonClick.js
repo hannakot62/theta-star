@@ -12,6 +12,7 @@ export default function handleGetTheRouteButtonClick(dispatch, matrix, startPoin
     dispatch(unsetIsSettingBoundaries())
 
     const thetaStar = new ThetaStar(matrix);
+
     dispatch(setIsLoading())
     const startTime = Date.now()
     const route = thetaStar.findPath(startPoint.x, startPoint.y, endPoint.x, endPoint.y)
@@ -26,6 +27,6 @@ export default function handleGetTheRouteButtonClick(dispatch, matrix, startPoin
         route.pop()
         route.shift()
         dispatch(setRoute(route))
-        dispatch(setResultText(`Just found the path! 🎉🎉🎉\nNeeded ${timeRequired} ms to solve it!`))
+        dispatch(setResultText(`Just found the path! 🎉🎉🎉 \nNeeded ${timeRequired} ms to solve it!`))
     }
 }

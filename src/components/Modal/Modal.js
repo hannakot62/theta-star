@@ -4,10 +4,10 @@ import {useSelector} from "react-redux";
 
 export default function Modal(props) {
     const {active, setActive} = props
-    const resultText = useSelector(state=>state.resultText.resultText)
+    const resultText = useSelector(state => state.resultText.resultText)
 
     useEffect(() => {
-        resultText?setActive(true):setActive(false)
+        resultText ? setActive(true) : setActive(false)
     }, [resultText, setActive]);
 
     return (
